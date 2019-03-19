@@ -23,6 +23,7 @@
 #include "usart.h"
 #include "gpio.h"
 #include "string.h"
+#include "stm32f4xx_hal.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -97,14 +98,17 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+	//int i = 0;
   while (1)
   {
     /* USER CODE END WHILE */
-    if (HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin))
+    if (!HAL_GPIO_ReadPin(B1_GPIO_Port, B1_Pin))
 		{
 		  VFD_Transmit(huart1, "Hello World!"); 
+			VFD_Transmit(huart2, "Hello World!"); 
+		  HAL_Delay(1000);
 		}
-    /* USER CODE BEGIN 3 */
+		/* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
 }
@@ -155,7 +159,7 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 
 void VFD_Transmit(UART_HandleTypeDef huart, char _out[]){
- HAL_UART_Transmit(&huart, (uint8_t *) _out, strlen(_out), 10);
+ HAL_UART_Transmit(&huart, (uint8_t *) _out, strlen(_out), 1000);
 } 
 
 /* USER CODE END 4 */
