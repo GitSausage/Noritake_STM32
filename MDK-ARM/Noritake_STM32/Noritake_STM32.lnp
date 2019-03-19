@@ -1,0 +1,28 @@
+--cpu=Cortex-M4.fp
+"noritake_stm32\startup_stm32f401xe.o"
+"noritake_stm32\main.o"
+"noritake_stm32\gpio.o"
+"noritake_stm32\usart.o"
+"noritake_stm32\stm32f4xx_it.o"
+"noritake_stm32\stm32f4xx_hal_msp.o"
+"noritake_stm32\stm32f4xx_hal_tim.o"
+"noritake_stm32\stm32f4xx_hal_tim_ex.o"
+"noritake_stm32\stm32f4xx_hal_uart.o"
+"noritake_stm32\stm32f4xx_hal_rcc.o"
+"noritake_stm32\stm32f4xx_hal_rcc_ex.o"
+"noritake_stm32\stm32f4xx_hal_flash.o"
+"noritake_stm32\stm32f4xx_hal_flash_ex.o"
+"noritake_stm32\stm32f4xx_hal_flash_ramfunc.o"
+"noritake_stm32\stm32f4xx_hal_gpio.o"
+"noritake_stm32\stm32f4xx_hal_dma_ex.o"
+"noritake_stm32\stm32f4xx_hal_dma.o"
+"noritake_stm32\stm32f4xx_hal_pwr.o"
+"noritake_stm32\stm32f4xx_hal_pwr_ex.o"
+"noritake_stm32\stm32f4xx_hal_cortex.o"
+"noritake_stm32\stm32f4xx_hal.o"
+"noritake_stm32\stm32f4xx_hal_exti.o"
+"noritake_stm32\system_stm32f4xx.o"
+--library_type=microlib --strict --scatter "Noritake_STM32\Noritake_STM32.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "Noritake_STM32.map" -o Noritake_STM32\Noritake_STM32.axf
