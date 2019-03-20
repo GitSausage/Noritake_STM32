@@ -23,7 +23,6 @@
 #include "usart.h"
 #include "gpio.h"
 #include "string.h"
-#include "stm32f4xx_hal.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
